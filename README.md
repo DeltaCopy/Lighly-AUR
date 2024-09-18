@@ -4,7 +4,7 @@ PKGBUILD file to build a package from https://github.com/Bali10050/Lightly
 ### Usage to build the package
 
 - clone this repository
-- update `pkgver` inside PKGBUILD to match the release tag name
+- update `pkgver` inside PKGBUILD to match the release tag name taken from https://github.com/Bali10050/Lightly/releases
 - run `makepkg -g` to generated the sha256sum and update the value inside the array `sha256sums=()`
 
 ### Installation

@@ -4,8 +4,7 @@
 # Description: Builds Lightly from src: https://github.com/Bali10050/Lightly
 
 # basic info
-pkgname="lightly"
-pkgbase="$pkgname-qt6"
+pkgname="lightly-qt6"
 pkgver=0.5.1 # change this to match the name of the release tag you want to build from
 pkgrel=1
 pkgdesc="Modern style for KDE/Qt applications"
@@ -85,24 +84,18 @@ build() (
   )
 
   cmake "${cmake_options[@]}"
-
   cmake --build build_kf6/kdecoration/config/
   cmake --build build_kf6
 )
 
 package() (
-
   install -dm755 "$pkgdir.git"
   DESTDIR="$pkgdir" cmake --install build_kf6
   rm -rf "$pkgdir/usr/lib/cmake"
 )
 
 package_lightly-kf6-git() {
-
-    mv "$pkgdir.git"/* "$pkgdir.git/"
-
-    chmod u=rwX,g=rX,o=rX -R "$pkgdir.git"
-  }
-
-# execute
+  mv "$pkgdir.git"/* "$pkgdir.git/"
+  chmod u=rwX,g=rX,o=rX -R "$pkgdir.git"
+}
 
