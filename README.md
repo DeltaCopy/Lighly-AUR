@@ -1,5 +1,5 @@
 # Lightly-ArchLinux
-PKGBUILD file to build a package from https://github.com/Bali10050/Lightly
+PKGBUILD file to build package from https://github.com/Bali10050/Lightly
 
 ### Usage to build the package
 
