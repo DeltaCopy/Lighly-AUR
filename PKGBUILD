@@ -6,7 +6,7 @@
 # basic info
 pkgname="lightly"
 pkgbase="$pkgname-qt6"
-pkgver=0.5.1
+pkgver=0.5.1 # change this to match the name of the release tag you want to build from
 pkgrel=1
 pkgdesc="Modern style for KDE/Qt applications"
 url="https://github.com/Bali10050/lightly"
@@ -26,6 +26,7 @@ source=(
     "${pkgname}.git::git+${url}.git#tag=v${pkgver//_/-}"
 )
 
+# use makepkg -g to generate the sha256sum for the release tag
 sha256sums=(
   '86790e88ac2275cbf0bb398c143716f1f80014927861765c89b3e8dbea0387d7'
 )
