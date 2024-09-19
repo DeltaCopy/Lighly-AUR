@@ -8,7 +8,7 @@ PKGBUILD file to build package from https://github.com/Bali10050/Lightly
 #### Release tag changes
 
 - update `pkgver` inside PKGBUILD to match the release tag name taken from https://github.com/Bali10050/Lightly/releases
-- run `makepkg -g >> PKGBUILD ` to generate a SHA256SUM, this gets automatically added to the end of the file inside the array `sha256sums=()`
+- run `makepkg -g >> PKGBUILD ` to generate a SHA256SUM, which is automatically added to the end of the file inside the array `sha256sums=()`
 
 #### Build and install package
 
