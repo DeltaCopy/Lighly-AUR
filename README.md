@@ -16,4 +16,4 @@ PKGBUILD file to build package from https://github.com/Bali10050/Lightly
 
 ## Pending activities
 
-- [] Migrate PKGBUILD over to the AUR once the package name is finalized
+- [ ] Migrate PKGBUILD over to the AUR once the package name is finalized
