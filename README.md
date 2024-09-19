@@ -13,3 +13,7 @@ PKGBUILD file to build package from https://github.com/Bali10050/Lightly
 #### Build and install package
 
 - run `makepkg -si` to build, and install the package
+
+## Pending activities
+
+- [] Migrate PKGBUILD over to the AUR once the package name is finalized
