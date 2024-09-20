@@ -62,7 +62,6 @@ conflicts=(
 
 prepare() {
   cd "$pkgname.git"
-
 }
 
 build() (
