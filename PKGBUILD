@@ -5,6 +5,7 @@
 
 # basic info
 pkgname="lightly-qt6"
+branch="qt6"
 pkgver=0.5.1 # change this to match the name of the release tag you want to build from
 pkgrel=1
 pkgdesc="Modern style for KDE/Qt applications"
@@ -30,12 +31,6 @@ sha256sums=(
   '86790e88ac2275cbf0bb398c143716f1f80014927861765c89b3e8dbea0387d7'
 )
 
-build() {
-  prepare
-  build
-  package
-}
-
 # KF6/Qt6
 depends_kf6=(
   'frameworkintegration'
@@ -49,12 +44,8 @@ depends_kf6=(
   'kiconthemes'
   'kwindowsystem'
   'qt6-declarative'
-
-  ## implicit
-  #ki18n
-  #kwidgetsaddons
-  #qt6-base
 )
+
 depends=("${depends_kf6[@]}")
 
 provides=(
@@ -69,11 +60,10 @@ conflicts=(
   lightly-qt6-git
 )
 
-prepare() (
+prepare() {
   cd "$pkgname.git"
-  git checkout -f qt6
-  #patch -Np1 -F100 -i ../qt6-missing-config.patch
-)
+
+}
 
 build() (
   local cmake_options=(
@@ -84,8 +74,12 @@ build() (
   )
 
   cmake "${cmake_options[@]}"
-  cmake --build build_kf6/kdecoration/config/
-  cmake --build build_kf6
+  cd build_kf6/kdecoration/config/
+  make -j 12
+  cd ../../colors/
+  make -j 12
+  cd ../
+  make -j 12
 )
 
 package() (
