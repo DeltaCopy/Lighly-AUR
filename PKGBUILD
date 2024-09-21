@@ -33,17 +33,15 @@ sha256sums=(
 
 # KF6/Qt6
 depends_kf6=(
-  'frameworkintegration'
-  'hicolor-icon-theme'
+  'kdecoration'
+  'qt6-declarative'
+  'kcoreaddons'
   'kcmutils'
   'kcolorscheme'
   'kconfig'
-  'kcoreaddons'
-  'kdecoration'
   'kguiaddons'
   'kiconthemes'
   'kwindowsystem'
-  'qt6-declarative'
 )
 
 depends=("${depends_kf6[@]}")
